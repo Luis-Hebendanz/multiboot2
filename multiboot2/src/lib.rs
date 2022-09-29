@@ -4,7 +4,7 @@
 // --- BEGIN STYLE CHECKS ---
 // These checks are optional in CI for PRs, as discussed in
 // https://github.com/rust-osdev/multiboot2/pull/92
-#![deny(clippy::all)]
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![deny(rustdoc::all)]
 // Forcing this would be a little bit ridiculous, because it would require code examples for
 // each getter and each trivial trait implementation (like Debug).
@@ -224,7 +224,7 @@ impl BootInformation {
     /// Search for the VBE framebuffer tag.
     pub fn framebuffer_tag(&self) -> Option<FramebufferTag> {
         self.get_tag(TagType::Framebuffer)
-            .map(|tag| framebuffer::framebuffer_tag(tag))
+            .map(framebuffer::framebuffer_tag)
     }
 
     /// Search for the EFI 32-bit SDT tag.

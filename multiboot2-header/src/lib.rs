@@ -32,7 +32,7 @@
 
 #![deny(rustdoc::all)]
 #![allow(rustdoc::missing_doc_code_examples)]
-#![deny(clippy::all)]
+#![allow(clippy::derive_partial_eq_without_eq)]
 #![deny(clippy::missing_const_for_fn)]
 #![deny(missing_debug_implementations)]
 
